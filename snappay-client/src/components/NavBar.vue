@@ -1,28 +1,42 @@
 <template>
-    <div class="nav-item is-tab" :class="{ 'active-bottom-border': $route.path === '/cart' }">
-  <div class="field is-grouped">
-    <p class="control">
-      <router-link to='/cart' class="button is-info">
-        <span class="icon">
-          <i class="fa fa-shopping-cart"></i>
-        </span>
-        <span>Checkout ({{itemsInCart}})</span>
-      </router-link>
-    </p>
+    <div>
+    <nav>
+      <router-link class="spacing" v-for="routes in links"
+      v-bind:key="routes.id"
+      :to="`${routes.page}`">{{routes.text}}</router-link>
+    </nav>
   </div>
-</div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
 import {mapGetters} from 'vuex'
 
+
 export default Vue.extend({
-    computed: {
-        itemsInCart() {
-            let cart = this.$store.getters.cartProducts;
-            return cart.reduce((accum, item) => accum + item.count, 0)
+    name: 'NavBar',
+    data() {
+    return {
+      links: [
+        {
+          id: 0,
+          text: 'Products',
+          page:'/'
+        },
+        {
+          id: 1,
+          text: 'Cart',
+          page:'/cart'
+        },
+        {
+          id: 2,
+          text: 'Checkout',
+          page:'/checkout'
         }
+      ]
     }
+  }
 })
 </script>
+<style scoped>
+</style>
 
