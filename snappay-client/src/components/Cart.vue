@@ -4,12 +4,12 @@
     <!-- <p v-show="!products.length"><i>Please add some products to cart.</i></p> -->
     <ul>
       <li
-        v-for="product in products"
+        v-for="product in cartProducts"
         :key="product.id">
         {{ product.name }} - {{ product.price }} x {{ product.count }}
       </li>
     </ul>
-    <p>Total: {{ totalPrice }}</p>
+    <p>Total: {{ cartTotalPrice }}</p>
     <!-- <p><button :disabled="!products.length">Checkout</button></p> -->
     <!-- <p v-show="checkoutStatus">Checkout {{ checkoutStatus }}.</p> -->
   </div>
@@ -27,7 +27,8 @@ const namespace: string = 'cart';
     export default class CartDetail extends Vue {
         @State('cart') cart: CartState;
         @Action('fetchData', { namespace }) fetchData: any;
-        @Getter('cartProducts', { namespace }) cartProduct: Product[];
+        @Getter('cartProducts', { namespace }) cartProducts: Product[];
+        @Getter('cartTotalPrice', { namespace }) cartTotalPrice: Product[];
 
         mounted() {
             // fetching data as soon as the component's been mounted
