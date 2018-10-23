@@ -54,7 +54,7 @@
         </div>
     </div>
 </div>
-    <button class="button is-info">Add to Cart</button>
+
     </div>
 </template>
 <script lang="ts">

@@ -20,7 +20,7 @@ export default Vue.extend({
     computed: {
         itemsInCart() {
             let cart = this.$store.getters.cartProducts;
-            return cart.reduce((accum, item) => accum + item.quantity, 0)
+            return cart.reduce((accum, item) => accum + item.count, 0)
         }
     }
 })
