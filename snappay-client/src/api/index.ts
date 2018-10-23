@@ -1,12 +1,10 @@
-import { CartProduct } from '../store'
+import { Product } from '../store/types'
 
-import { Product } from '../store/'
-
-const initProducts: Product[] = [
+export const initProducts: Product[] = [
   {
     id: 1,
     name: 'iPad 4 Mini',
-    photo: 'none',
+    photo: [],
     description: 'The most interesting device',
     price: 500.01,
     options: ['black', '8GB'],
@@ -15,7 +13,7 @@ const initProducts: Product[] = [
   {
     id: 2,
     name: 'H&M T-Shirt White',
-    photo: 'none',
+    photo: [],
     description: 'For hipsters',
     price: 10.99,
     options: ['XL'],
@@ -24,7 +22,7 @@ const initProducts: Product[] = [
   {
     id: 3,
     name: 'Charli XCX - Sucker CD',
-    photo: 'none',
+    photo: [],
     description: 'he sucker',
     price: 19.99,
     options: [],

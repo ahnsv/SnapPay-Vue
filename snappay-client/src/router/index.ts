@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Product from '@/components/Product.vue'
+import Main from '@/components/Main.vue'
+import Cart from '@/components/Cart.vue'
 
 Vue.use(Router)
 
@@ -8,8 +9,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Product',
-      component: Product,
+      name: 'Cart',
+      component: Cart,
     },
   ],
 })
