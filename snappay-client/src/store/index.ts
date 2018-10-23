@@ -9,7 +9,7 @@ export interface RootState {
   version: string
 }
 
-export default new Vuex.Store({
+export const store = new Vuex.Store({
   modules: {
     CartModule,
   },
