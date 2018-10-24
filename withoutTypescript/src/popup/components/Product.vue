@@ -3,6 +3,7 @@
     <v-flex xs12 sm6 offset-sm3>
       <v-card>
         <v-list-tile>
+          <h3>Product</h3>
           <v-list-tile-content>
             <v-list-tile-title v-html="pdata.title">
               {{ pdata.title }}
