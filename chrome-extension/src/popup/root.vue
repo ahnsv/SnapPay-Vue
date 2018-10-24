@@ -31,7 +31,7 @@
 </template>
 <script language="ts">
 import Vue from 'vue';
-import Vuetify from 'vuetify'
+// import Vuetify from 'vuetify'
   export default Vue.extend(
     {
       data() {
