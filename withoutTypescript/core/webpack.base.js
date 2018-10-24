@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
-const ChromeReloadPlugin  = require('wcer')
-const {cssLoaders, htmlPage} = require('./tools')
+const ChromeReloadPlugin = require('wcer')
+const { cssLoaders, htmlPage } = require('./tools')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 let resolve = dir => path.join(__dirname, '..', 'src', dir)
@@ -10,11 +10,11 @@ module.exports = {
     tab: resolve('./tab'),
     popup: resolve('./popup'),
     options: resolve('./options'),
-    content: resolve('./content'), 
+    content: resolve('./content'),
     devtools: resolve('./devtools'),
     background: resolve('./backend'),
     panel: resolve('./devtools/panel'),
-    inject: resolve('./content/inject'),
+    inject: resolve('./content/inject')
   },
   output: {
     path: path.join(__dirname, '..', 'build'),
@@ -26,21 +26,12 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      vue$: 'vue/dist/vue.esm.js',
       '@': resolve('src')
     }
   },
   module: {
     rules: [
-      {
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: [path.join(__dirname, '..', 'src'), path.join(__dirname, '..', 'test')],
-        options: {
-          formatter: require('eslint-friendly-formatter')
-        }
-      },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -61,7 +52,10 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include:  [path.join(__dirname, '..', 'src'), path.join(__dirname, '..', 'test')],
+        include: [
+          path.join(__dirname, '..', 'src'),
+          path.join(__dirname, '..', 'test')
+        ]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -100,7 +94,7 @@ module.exports = {
     new ChromeReloadPlugin({
       port: 9090,
       manifest: path.join(__dirname, '..', 'src', 'manifest.js')
-    }),
+    })
   ],
-  performance: { hints: false },
+  performance: { hints: false }
 }

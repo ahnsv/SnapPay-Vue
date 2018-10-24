@@ -1,9 +1,9 @@
 
 module.exports = {
-  name: 'Vue Extension',
+  name: 'SnapPay Extension',
   version: '1.0.0',
-  description: 'Vue.js Chrome Extension Template (wcer)',
-  author: 'yura',
+  description: 'SnapPay Chrome Extension',
+  author: 'Humphrey Ahn',
   manifest_version: 2,
   icons: { '16': 'icons/16.png', '128': 'icons/128.png' },
   permissions: [
