@@ -1,4 +1,5 @@
 import axios from 'axios'
+import api from '../../api'
 // initial state
 const state = {
   all: []
@@ -10,8 +11,8 @@ const getters = {}
 // actions
 const actions = {
   getAllProducts ({ commit }) {
-    axios.get('/products').then(r => r.data).then(products => {
-      'SET_PRODUCTS', products
+    api().get('/products', { crossdomain: true }).then(r => {
+      commit('SET_PRODUCTS', r.data)
     })
   }
 }

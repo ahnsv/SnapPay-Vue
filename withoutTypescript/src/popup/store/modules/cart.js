@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 // initial state
 // shape: [{ id, quantity }]
 const state = {
@@ -32,15 +34,12 @@ const actions = {
     commit('SET_CHECKOUT_STATUS', null)
     // empty cart
     commit('SET_CART_ITEMS', { items: [] })
-    shop.buyProducts(
-      products,
-      () => commit('SET_CHECKOUT_STATUS', 'successful'),
-      () => {
-        commit('SET_CHECKOUT_STATUS', 'failed')
-        // rollback to the cart saved before sending the request
-        commit('SET_CART_ITEMS', { items: savedCartItems })
-      }
-    )
+    if (axios.get('/cart')) {
+      commit('SET_CHECKOUT_STATUS', 'successful')
+    } else {
+      commit('SET_CHECKOUT_STATUS', 'failed')
+      commit('SET_CART_ITEMS', { items: savedCartItems })
+    }
   },
 
   addProductToCart ({ state, commit }, product) {
