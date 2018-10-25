@@ -4,6 +4,7 @@
             <v-list>
                 <Product v-for="(item, index) in products" :key="index" pdata="item"/>
             </v-list>
+            <button @click="addProductToCart(product)">Add to cart</button>
         </v-card>
     </v-layout>
 </template>
@@ -15,12 +16,6 @@ import Vuetify from 'vuetify'
 import Vuex, { mapState, mapActions } from 'vuex'
 export default {
     name: 'Products',
-    data: () => {
-        return {
-            productsData: [
-            ]
-        }
-    },
     components: {
         Product
     },
