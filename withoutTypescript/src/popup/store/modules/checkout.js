@@ -1,5 +1,5 @@
 const state = {
-  isAutheticated: false | true,
+  isAuthenticated: false | true,
   authenticationData: null
 }
 
@@ -7,7 +7,11 @@ const getters = {}
 
 const actions = {}
 
-const mutations = {}
+const mutations = {
+  SET_AUTHENTICATION_STATUS (state, status) {
+    state.isAuthenticated = status
+  }
+}
 
 export default {
   namespaced: true,
