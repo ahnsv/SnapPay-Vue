@@ -2,10 +2,17 @@
 
 Client/Server side for SnapPay :point_up_2:
 
-- [SnapPay-client](#snappay-client)
-  - [SnapPay Client Design Doc :blue_book:](#snappay-client-design-doc-blue_book)
-    - [Overview](#overview)
-      - [Working scenarios :clipboard:](#working-scenarios-clipboard)
+- [SnapPay](#snappay)
+    - [SnapPay Client Design Doc :blue_book:](#snappay-client-design-doc-blue_book)
+        - [Overview](#overview)
+            - [Working scenarios :clipboard:](#working-scenarios-clipboard)
+            - [Thoughts on Tech Stacks :bulb:](#thoughts-on-tech-stacks-bulb)
+            - [Client design :page_with_curl:](#client-design-page_with_curl)
+                - [UI Components](#ui-components)
+                - [System Design](#system-design)
+            - [misc stacks](#misc-stacks)
+    - [TODO](#todo)
+    - [Takeaways](#takeaways)
 
 ## SnapPay Client Design Doc :blue_book:
 
@@ -13,9 +20,9 @@ Client/Server side for SnapPay :point_up_2:
 
 A Chrome Extension that retrives url, uploads products, and let other users buy stuffs with simple url-based shopping and transaction features.
 
-Client Side
-
 ![snappay_diagrams_1](./snappay-client/static/snappay_diagrams_1.png)
+
+**_UPDATE: SnapPay Server -> SnapPay Admin _**
 
 #### Working scenarios :clipboard:
 
@@ -32,7 +39,7 @@ Client Side
    - input: UserData + transaction/order data from app server
    - output: profile page
 
-#### Thoughts about Tech Stacks
+#### Thoughts on Tech Stacks :bulb:
 
 What should I use for this app?
 I might need:
@@ -54,7 +61,7 @@ Seems like vue-cli w/ webpack template was the best option for me to pull it off
 
 p.s. typescript got me suffer with its type checking, but it worths it. So much easier for debugging...
 
-#### Client extension design
+#### Client design :page_with_curl:
 
 ##### UI Components
 
@@ -69,16 +76,25 @@ Main.vue // Main page wrapper for the extension
 Option.vue // just in case...
 ```
 
-##### vuex state mgmt design
+##### System Design
 
-pseudo-code/logic
+Client side pseudo-logic
 
-![vuex state diagram](snappay-client/static/snappay_diagrams_2.png)
+![vuex state diagram](snappay-client/static/snappay_sys_diagram.png)
+
+#### misc stacks
+
+- Database: sqlite3 or aws rds (to leverage cloud...)
+- connection w/ servers: axios
+- third party transaction api: Naver Pay? or Iamport
 
 ## TODO
 
 - Client
-  - chrome side to vue side connection
-  - vuex to component binding error
+  - Is there any way to simplify the system more?
 - Server
-  - design...
+  - Should it eventually migrate to AWS EC2 and AWS RDS...? or nah
+
+## Takeaways
+
+- 2018-10-25 - Should draw a diagram before start coding, bro... It actually got me understand how it should be and how I want it to be
