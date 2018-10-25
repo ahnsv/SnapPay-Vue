@@ -96,5 +96,8 @@ module.exports = {
       manifest: path.join(__dirname, '..', 'src', 'manifest.js')
     })
   ],
-  performance: { hints: false }
+  performance: { hints: false },
+  externals: [
+    'fs', 'net'
+  ]
 }

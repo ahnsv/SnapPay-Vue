@@ -1,9 +1,17 @@
-console.log('background !')
+import data from './data.json'
+const express = require('express')
+const app = express()
+const port = 3000
+const router = express.Router()
 
-// transaction data
-// checkout -> localstorage (storage.js>set) POST
-// profile <- localstorage (storage.js>get) GET
+router.get('/products', (req, res) => {
+    res.send(data.products)
+})
 
-// api server
-// localstorage -> db
-// localstorage -> server
+router.get('/cart', (req, res) => {
+    res.send(data.cart)
+})
+
+app.use('/', router)
+app.listen(port)
+console.log('Server runs at ', port)
