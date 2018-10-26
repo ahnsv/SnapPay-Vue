@@ -13,6 +13,7 @@ Client/Server side for SnapPay :point_up_2:
             - [misc stacks](#misc-stacks)
     - [TODO](#todo)
     - [Takeaways](#takeaways)
+    - [References](#references)
 
 ## SnapPay Client Design Doc :blue_book:
 
@@ -98,3 +99,19 @@ Client side pseudo-logic
 ## Takeaways
 
 - 2018-10-25 - Should draw a diagram before start coding, bro... It actually got me understand how it should be and how I want it to be
+
+## References
+
+https://scotch.io/tutorials/vue-authentication-and-route-handling-using-vue-router#toc-setup-nodejs-server
+
+https://scotch.io/tutorials/handling-authentication-in-vue-using-vuex
+
+https://dev.to/nkoik/-vuex-pattern-smart-module-registration-15gc
+
+https://codeburst.io/dynamic-modules-with-vuex-and-vue-b9c481ca792
+
+https://glebbahmutov.com/blog/vue-vuex-rest-todomvx/
+
+https://github.com/bahmutov/vue-vuex-todomvc
+
+https://github.com/matheusazzi/shop-vue
