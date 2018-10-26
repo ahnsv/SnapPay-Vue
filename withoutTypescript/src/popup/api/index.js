@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { dev } from './config'
 export default () => {
   return axios.create({
     baseURL: 'http://localhost:3000/',
