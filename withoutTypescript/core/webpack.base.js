@@ -97,7 +97,5 @@ module.exports = {
     })
   ],
   performance: { hints: false },
-  externals: [
-    'fs', 'net'
-  ]
+  target: 'node'
 }
