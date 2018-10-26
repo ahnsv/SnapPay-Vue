@@ -1,0 +1,26 @@
+{
+    "products": [
+        {
+            "title": "Galaxy Note 9",
+            "subtitle": "Galaxy Note 9",
+            "inventory": 500,
+            "description": "Lit",
+            "imgSrc": "http://localhost:0000"
+        },
+        {
+            "title": "iPhone XS",
+            "subtitle": "iPhone XS",
+            "inventory": 500,
+            "description": "Lit",
+            "imgSrc": "http://localhost:0000"
+        },
+        {
+            "title": "Google Pixel 3",
+            "subtitle": "Google Pixel 3",
+            "inventory": 500,
+            "description": "Lit",
+            "imgSrc": "http://localhost:0000"
+        }
+    ],
+    "cart": []
+}
